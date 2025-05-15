@@ -2,52 +2,32 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <title>Matilda & Pussads Magiska Bröllop ✨</title>
+    <title>Matilda & Pussads Bröllopsvortex ✨🌀🐑</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="magic-portal">
-    <h1>✨ Matilda & Pussads Bröllop 2026 ✨</h1>
-    <p>Följ med oss genom portalen till en dag av kärlek, musik och trolldom...</p>
+<div class="vortex-container" id="vortex">
+    <div class="vortex"></div>
+    <h1>✨ Välkommen till Bröllopet! ✨</h1>
+    <p>Kliv in i kärlekens vortex...</p>
 </div>
 
-<div class="floating-runestones">
-    <div class="rune">ᚠ</div>
-    <div class="rune">ᛉ</div>
-    <div class="rune">ᛗ</div>
-    <div class="rune">ᚹ</div>
-    <div class="rune">ᛃ</div>
+<div class="meadow-container hidden" id="meadow">
+    <h2>Du har anlänt till fårens äng! 🐑✂️</h2>
+    <div class="sheep-field">
+        <div class="sheep shaved"></div>
+        <div class="sheep"></div>
+        <div class="sheep"></div>
+        <div class="sheep shaved"></div>
+    </div>
+    <p>Rakning pågår...</p>
 </div>
 
-<div class="glow-section">
-    <h2>Bröllopsinfo 📜</h2>
-    <p>🗓️ <strong>Datum:</strong> 6 juni 2025</p>
-    <p>📍 <strong>Plats:</strong> Hembygdsgården</p>
-    <p>🎩 <strong>Klädsel:</strong> Kavaj</p>
-    <p>🎶 <strong>Program:</strong> Vigsel 15:00, Middag & Fest 17:00</p>
-</div>
-
-<div class="fire-border">
-    <h2>📝 OSA här</h2>
-    <form id="rsvpForm">
-        <input type="text" name="name" placeholder="Ditt namn" required />
-        <input type="number" name="guests" placeholder="Antal gäster" required />
-        <textarea name="message" placeholder="Meddelande (valfritt)"></textarea>
-        <button type="submit">OSA</button>
-    </form>
-</div>
-
-<div class="ascii-fire">
-<pre>
-              (  .      )
-                  )           (              )
-                        .  '   .   '  .  '  .
-            (    , )       (.   )  (   ',    )
-             .' ) ( . )    ,  ( ,     )   ( .
-          ). , ( .   (  ) ( , ')  .' (  ,    )
-         (_,) . ), ) _) _,')  (, ) '. )  ,. (' )
-    ~~~~~~ Matilda & Pussads Magiska Bröllop ~~~~~~
-</pre>
-</div>
+<script>
+    setTimeout(() => {
+        document.getElementById('vortex').classList.add('hidden');
+        document.getElementById('meadow').classList.remove('hidden');
+    }, 5000); // 5 sekunders vortex-uppslukning
+</script>
 </body>
 </html>

@@ -1,114 +1,104 @@
 body {
-    background: radial-gradient(ellipse at center, #0b0033 0%, #000000 100%);
-    color: #eee;
-    font-family: 'Cinzel', serif;
-    overflow-x: hidden;
     margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: black;
+    color: white;
 }
 
-.magic-portal {
-    text-align: center;
-    padding: 50px;
-    color: #fff;
-    animation: portalGlow 3s infinite alternate;
+.hidden {
+    display: none !important;
 }
 
-@keyframes portalGlow {
-    from { text-shadow: 0 0 10px #9f5afd, 0 0 20px #ff5ebf; }
-    to { text-shadow: 0 0 20px #5efcff, 0 0 30px #5effb0; }
-}
-
-.floating-runestones {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.rune {
-    position: absolute;
-    font-size: 50px;
-    color: #ffffff80;
-    animation: floatRunes 10s linear infinite;
-}
-
-.rune:nth-child(1) { left: 10%; animation-delay: 0s; }
-.rune:nth-child(2) { left: 30%; animation-delay: 2s; }
-.rune:nth-child(3) { left: 50%; animation-delay: 4s; }
-.rune:nth-child(4) { left: 70%; animation-delay: 6s; }
-.rune:nth-child(5) { left: 90%; animation-delay: 8s; }
-
-@keyframes floatRunes {
-    0% { top: 100%; transform: rotate(0deg); opacity: 0; }
-    10% { opacity: 1; }
-    100% { top: -10%; transform: rotate(360deg); opacity: 0; }
-}
-
-.glow-section {
-    background: rgba(255,255,255,0.05);
-    border: 2px solid #5efcff;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 300px;
-    box-shadow: 0 0 20px #5effb0;
-}
-
-.fire-border {
-    background: #220000;
-    border: 2px solid #ff4500;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 300px;
-    box-shadow: 0 0 20px #ff4500;
-    animation: flickerFire 0.15s infinite alternate;
-}
-
-@keyframes flickerFire {
-    from { box-shadow: 0 0 20px #ff4500; }
-    to { box-shadow: 0 0 30px #ff6347; }
-}
-
-form {
+/* Vortex Animation */
+.vortex-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-input, textarea, button {
-    font-family: 'Courier New', monospace;
-    background: #000;
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 8px;
-}
-
-button {
-    background: #5efcff;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-button:hover {
-    background: #ff5ebf;
-}
-
-.ascii-fire pre {
-    color: #ff6347;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: radial-gradient(circle, #1b0033 0%, #000000 100%);
     text-align: center;
-    font-family: monospace;
-    text-shadow:
-            0 0 5px #ff4500,
-            0 0 10px #ff0000,
-            0 0 15px #ff6347;
-    animation: fireDance 1s infinite alternate;
 }
 
-@keyframes fireDance {
-    0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(1.02); opacity: 1; }
+.vortex {
+    width: 300px;
+    height: 300px;
+    border: 16px solid transparent;
+    border-top: 16px solid #5efcff;
+    border-bottom: 16px solid #ff5ebf;
+    border-radius: 50%;
+    animation: spinVortex 2s linear infinite, pulseVortex 1s ease-in-out infinite alternate;
+    margin-bottom: 20px;
+}
+
+@keyframes spinVortex {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulseVortex {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+/* Meadow Scene */
+.meadow-container {
+    height: 100vh;
+    background: linear-gradient(to top, #88cc88 0%, #ccffcc 30%, #87ceeb 100%);
+    text-align: center;
+    padding-top: 50px;
+    color: #333;
+}
+
+.sheep-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.sheep {
+    width: 100px;
+    height: 70px;
+    background: white;
+    border-radius: 50% 50% 40% 40%;
+    position: relative;
+    animation: sheepBounce 2s infinite ease-in-out;
+    box-shadow: 0 0 10px #aaa;
+}
+
+.sheep.shaved {
+    background: #ddd;
+}
+
+.sheep::before, .sheep::after {
+    content: "";
+    position: absolute;
+    background: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    bottom: -10px;
+}
+
+.sheep::before { left: 10px; }
+.sheep::after { right: 10px; }
+
+@keyframes sheepBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Raknings-text-effekt */
+.meadow-container p {
+    font-style: italic;
+    animation: textFade 2s infinite alternate;
+}
+
+@keyframes textFade {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
 }
