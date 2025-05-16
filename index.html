@@ -2,90 +2,104 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <title>Matilda & Pussads Magiska Bröllop ✨</title>
+    <title>Matilda & Pussads Retro Arcade Bröllop 👾</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="magic-portal">
-    <h1>✨ Matilda & Pussads Bröllop 2026 ✨</h1>
-    <p>Följ med oss genom portalen till en dag av kärlek, musik och trolldom...</p>
+
+<canvas id="gameCanvas"></canvas>
+
+<div class="overlay">
+    <h1>✨ Matilda & Pussads Bröllop ✨</h1>
+    <p>🗓️ Datum: 6 juni 2025</p>
+    <p>📍 Plats: Hembygdsgården</p>
+    <p>🎩 Klädsel: Kavaj</p>
+    <p>🎶 Vigsel 15:00, Middag & Fest 17:00</p>
+    <p>👾 Klicka & Skjut fiender!</p>
 </div>
 
-<div class="floating-runestones">
-    <div class="rune">ᚠ</div>
-    <div class="rune">ᛉ</div>
-    <div class="rune">ᛗ</div>
-    <div class="rune">ᚹ</div>
-    <div class="rune">ᛃ</div>
-</div>
-
-<div class="glow-section">
-    <h2>Bröllopsinfo 📜</h2>
-    <p>🗓️ <strong>Datum:</strong> 6 juni 2025</p>
-    <p>📍 <strong>Plats:</strong> Hembygdsgården</p>
-    <p>🎩 <strong>Klädsel:</strong> Kavaj</p>
-    <p>🎶 <strong>Program:</strong> Vigsel 15:00, Middag & Fest 17:00</p>
-</div>
-
-<div class="fire-border">
-    <h2>📝 OSA här</h2>
-    <form id="rsvpForm">
-        <input type="text" name="name" placeholder="Ditt namn" required />
-        <input type="number" name="guests" placeholder="Antal gäster" required />
-        <textarea name="message" placeholder="Meddelande (valfritt)"></textarea>
-        <button type="submit">OSA</button>
-    </form>
-</div>
-
-<div class="ascii-fire">
-<pre>
-              (  .      )
-                  )           (              )
-                        .  '   .   '  .  '  .
-            (    , )       (.   )  (   ',    )
-             .' ) ( . )    ,  ( ,     )   ( .
-          ). , ( .   (  ) ( , ')  .' (  ,    )
-         (_,) . ), ) _) _,')  (, ) '. )  ,. (' )
-    ~~~~~~ Matilda & Pussads Magiska Bröllop ~~~~~~
-</pre>
-</div>
-<div class="sheep-container"></div>
+<div class="scanlines"></div>
 
 <script>
-    function createSheep() {
-        const sheep = document.createElement('div');
-        sheep.classList.add('sheep');
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-        const face = document.createElement('div');
-        face.classList.add('sheep-face');
-        sheep.appendChild(face);
+    let player = { x: canvas.width / 2, y: canvas.height - 50, size: 20 };
+    let bullets = [];
+    let enemies = [];
 
-        const leg1 = document.createElement('div');
-        leg1.classList.add('sheep-leg');
-        sheep.appendChild(leg1);
-
-        const leg2 = document.createElement('div');
-        leg2.classList.add('sheep-leg');
-        sheep.appendChild(leg2);
-
-        // Random direction
-        const direction = Math.random() > 0.5 ? 'right' : 'left';
-        sheep.style.top = Math.random() * 90 + 'vh';
-
-        if (direction === 'right') {
-            sheep.style.animation = `sheepRunRight ${10 + Math.random() * 5}s linear infinite`;
-        } else {
-            sheep.style.animation = `sheepRunLeft ${10 + Math.random() * 5}s linear infinite`;
+    function createEnemies() {
+        enemies = [];
+        for (let i = 0; i < 8; i++) {
+            for (let j = 0; j < 3; j++) {
+                enemies.push({ x: 60 + i * 80, y: 60 + j * 60, size: 30 });
+            }
         }
-
-        document.querySelector('.sheep-container').appendChild(sheep);
     }
 
-    // Create 20 sheep
-    for (let i = 0; i < 20; i++) {
-        setTimeout(createSheep, i * 500);
+    function drawPlayer() {
+        ctx.fillStyle = '#39ff14';
+        ctx.fillRect(player.x - player.size / 2, player.y - player.size / 2, player.size, player.size);
     }
+
+    function drawBullets() {
+        ctx.fillStyle = '#ff00ff';
+        bullets.forEach(b => {
+            ctx.fillRect(b.x - 2, b.y - 10, 4, 10);
+        });
+    }
+
+    function drawEnemies() {
+        ctx.fillStyle = '#ff0080';
+        enemies.forEach(e => {
+            ctx.fillRect(e.x - e.size / 2, e.y - e.size / 2, e.size, e.size);
+        });
+    }
+
+    function updateBullets() {
+        bullets = bullets.filter(b => b.y > 0);
+        bullets.forEach(b => b.y -= 8);
+
+        bullets.forEach(b => {
+            enemies.forEach((e, index) => {
+                if (b.x > e.x - e.size / 2 && b.x < e.x + e.size / 2 &&
+                    b.y > e.y - e.size / 2 && b.y < e.y + e.size / 2) {
+                    enemies.splice(index, 1);
+                    b.y = -10;
+                }
+            });
+        });
+    }
+
+    function gameLoop() {
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        drawPlayer();
+        drawBullets();
+        drawEnemies();
+        updateBullets();
+
+        requestAnimationFrame(gameLoop);
+    }
+
+    window.addEventListener('mousemove', e => {
+        player.x = e.clientX;
+    });
+
+    window.addEventListener('click', () => {
+        bullets.push({ x: player.x, y: player.y });
+    });
+
+    createEnemies();
+    gameLoop();
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
 </script>
-
 </body>
 </html>
