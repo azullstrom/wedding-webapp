@@ -49,5 +49,43 @@
     ~~~~~~ Matilda & Pussads Magiska Bröllop ~~~~~~
 </pre>
 </div>
+<div class="sheep-container"></div>
+
+<script>
+    function createSheep() {
+        const sheep = document.createElement('div');
+        sheep.classList.add('sheep');
+
+        const face = document.createElement('div');
+        face.classList.add('sheep-face');
+        sheep.appendChild(face);
+
+        const leg1 = document.createElement('div');
+        leg1.classList.add('sheep-leg');
+        sheep.appendChild(leg1);
+
+        const leg2 = document.createElement('div');
+        leg2.classList.add('sheep-leg');
+        sheep.appendChild(leg2);
+
+        // Random direction
+        const direction = Math.random() > 0.5 ? 'right' : 'left';
+        sheep.style.top = Math.random() * 90 + 'vh';
+
+        if (direction === 'right') {
+            sheep.style.animation = `sheepRunRight ${10 + Math.random() * 5}s linear infinite`;
+        } else {
+            sheep.style.animation = `sheepRunLeft ${10 + Math.random() * 5}s linear infinite`;
+        }
+
+        document.querySelector('.sheep-container').appendChild(sheep);
+    }
+
+    // Create 20 sheep
+    for (let i = 0; i < 20; i++) {
+        setTimeout(createSheep, i * 500);
+    }
+</script>
+
 </body>
 </html>

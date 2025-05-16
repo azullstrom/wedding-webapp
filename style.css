@@ -112,3 +112,81 @@ button:hover {
     0% { transform: scale(1); opacity: 0.8; }
     100% { transform: scale(1.02); opacity: 1; }
 }
+
+.sheep-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.sheep {
+    position: absolute;
+    width: 80px;
+    height: 50px;
+    background: white;
+    border-radius: 50% 50% 40% 40%;
+    box-shadow: 0 0 5px #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.sheep-face {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sheep-face::before {
+    content: "👀";
+    font-size: 14px;
+}
+
+.sheep-face::after {
+    content: "😬";
+    font-size: 14px;
+    margin-top: -4px;
+}
+
+.sheep-leg {
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    background: #333;
+    border-radius: 2px;
+    bottom: -5px;
+    animation: legRun 0.3s infinite alternate;
+}
+
+.sheep-leg:nth-child(2) { left: 10px; animation-delay: 0s; }
+.sheep-leg:nth-child(3) { right: 10px; animation-delay: 0.15s; }
+
+@keyframes legRun {
+    0% { transform: rotate(20deg); }
+    100% { transform: rotate(-20deg); }
+}
+
+@keyframes sheepRunRight {
+    0% { left: -100px; }
+    100% { left: 110%; }
+}
+
+@keyframes sheepRunLeft {
+    0% { left: 110%; transform: scaleX(-1); }
+    100% { left: -100px; transform: scaleX(-1); }
+}
