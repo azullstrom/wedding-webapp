@@ -114,7 +114,9 @@
     margin-left: -10px;
   }
   .flipTimebox {
-    margin: 50px 0 100px 20px;
+    margin: 50px auto 100px auto;
+    display: flex;
+    justify-content: center;
   }
 }
 @media screen and (max-width: 360px) {
