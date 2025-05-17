@@ -115,6 +115,7 @@
   }
   .flipTimebox {
     margin: 50px auto 100px auto;
+    width: max-content;
   }
 }
 @media screen and (max-width: 360px) {
