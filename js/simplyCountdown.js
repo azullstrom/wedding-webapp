@@ -122,10 +122,10 @@
                 minutes: 0,
                 seconds: 0,
                 words: {
-                    days: 'dagar',
-                    hours: 'timmar',
-                    minutes: 'minuter',
-                    seconds: 'sekunder',
+                    days: 'Dagar',
+                    hours: 'Timmar',
+                    minutes: 'Minuter',
+                    seconds: 'Sekunder'
                 },
                 plural: false,
                 inline: false,
