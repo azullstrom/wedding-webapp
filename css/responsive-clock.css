@@ -81,41 +81,40 @@
     padding: 0;
   }
   .flipTimebox .flip-clock-divider .flip-clock-label {
-    font-size: 1em;
+    font-size: 0.85em;
   }
   .flipTimebox .flip-clock-divider.days .flip-clock-label {
-    right: -33px;
+    right: -25px;
   }
   .flipTimebox .flip-clock-divider.hours .flip-clock-label {
-    right: -37px;
+    right: -28px;
   }
   .flipTimebox .flip-clock-divider.minutes .flip-clock-label {
-    right: -43px;
+    right: -34px;
   }
   .flipTimebox .flip-clock-divider.seconds .flip-clock-label {
-    right: -45px;
+    right: -36px;
   }
   .flipTimebox .flip-clock-wrapper ul li a div div.inn {
-    font-size: 28px;
+    font-size: 22px;
   }
   .flipTimebox .flip-clock-meridium {
-    font-size: 14px !important;
+    font-size: 12px !important;
   }
   .flipTimebox .flip-clock-wrapper ul.flip {
-    width: 27px;
+    width: 22px;
     background-color: transparent;
     box-shadow: none;
-    margin-left: -8px;
+    margin-left: -6px;
   }
   .flipTimebox .flip-clock-wrapper ul li {
-    width: 30px;
+    width: 24px;
   }
   .flipTimebox .flip-clock-dot {
-    margin-left: -10px;
+    margin-left: -8px;
   }
   .flipTimebox {
-    margin: 50px 0 auto auto;
-    width: max-content;
+    margin: 50px 0 100px 20px;
   }
 }
 @media screen and (max-width: 360px) {
