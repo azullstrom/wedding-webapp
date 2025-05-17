@@ -206,15 +206,43 @@
 				</div>
 			</div>
 
-
-
-				<div class="container animate-box">
-					<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg); ">
-						<a href="#" class="popup-vimeo"><i class="icon-video2"></i></a>
-						<div class="overlay"></div>
+			<div class="container animate-box">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<form action="" method="POST" class="form-horizontal fh5co-form">
+							<div class="form-group">
+								<label for="name" class="control-label">Namn</label>
+								<input type="text" id="name" name="name" class="form-control" placeholder="Ditt namn" required>
+							</div>
+							<div class="form-group">
+								<label for="email" class="control-label">E-post</label>
+								<input type="email" id="email" name="email" class="form-control" placeholder="Din e-postadress" required>
+							</div>
+							<div class="form-group">
+								<label for="attendance" class="control-label">Kommer du?</label>
+								<select id="attendance" name="attendance" class="form-control" required>
+									<option value="">Välj ett alternativ</option>
+									<option value="yes">Ja, jag kommer!</option>
+									<option value="no">Tyvärr, jag kan inte komma</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="guests" class="control-label">Antal gäster (inkl. dig)</label>
+								<input type="number" id="guests" name="guests" class="form-control" min="1" max="10" placeholder="1" required>
+							</div>
+							<div class="form-group">
+								<label for="message" class="control-label">Övrigt meddelande</label>
+								<textarea id="message" name="message" class="form-control" rows="4" placeholder="Allergier? Frågor?"></textarea>
+							</div>
+							<div class="form-group text-center">
+								<button type="submit" class="btn btn-primary">Skicka OSA</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
+
+		</div>
 			
 		</div>
 	</div>
