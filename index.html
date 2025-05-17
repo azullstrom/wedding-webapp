@@ -211,7 +211,7 @@
 					<div class="col-md-8 col-md-offset-2">
 						<form action="" method="POST" class="form-horizontal fh5co-form">
 							<div class="form-group">
-								<label for="name" class="control-label">Namn</label>
+								<label for="name" class="control-label">För- och efternamn</label>
 								<input type="text" id="name" name="name" class="form-control" placeholder="Ditt namn" required>
 							</div>
 							<div class="form-group">
@@ -219,16 +219,16 @@
 								<input type="email" id="email" name="email" class="form-control" placeholder="Din e-postadress" required>
 							</div>
 							<div class="form-group">
-								<label for="attendance" class="control-label">Kommer du?</label>
+								<label for="attendance" class="control-label">Tar du med +1?</label>
 								<select id="attendance" name="attendance" class="form-control" required>
 									<option value="">Välj ett alternativ</option>
-									<option value="yes">Ja, jag kommer!</option>
-									<option value="no">Tyvärr, jag kan inte komma</option>
+									<option value="yes">Ja, jag vill ha plus en</option>
+									<option value="no">Nej, jag kommer ensam</option>
 								</select>
 							</div>
-							<div class="form-group">
-								<label for="guests" class="control-label">Antal gäster (inkl. dig)</label>
-								<input type="number" id="guests" name="guests" class="form-control" min="1" max="10" placeholder="1" required>
+							<div class="form-group" id="plus-one-name-group" style="display: none;">
+								<label for="plusOneName" class="control-label">För- och efternamn +1</label>
+								<input type="text" id="plusOneName" name="plusOneName" class="form-control" placeholder="För- och efternamn på plus en">
 							</div>
 							<div class="form-group">
 								<label for="message" class="control-label">Övrigt meddelande</label>

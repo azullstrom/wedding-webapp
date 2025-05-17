@@ -2,6 +2,27 @@
 	
 	'use strict';
 
+	var handlePlusOneSelection = function() {
+		var $attendance = $('#attendance');
+		var $plusOneGroup = $('#plus-one-name-group');
+
+		$attendance.on('change', function () {
+			if ($(this).val() === 'yes') {
+				$plusOneGroup.show();
+			} else {
+				$plusOneGroup.hide();
+			}
+		});
+
+		// Initial check in case value is pre-selected (like on form re-render)
+		if ($attendance.val() === 'no') {
+			$plusOneGroup.show();
+		} else {
+			$plusOneGroup.hide();
+		}
+	};
+
+
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
@@ -213,8 +234,9 @@
 		$(window).stellar();
 	};
 
-	
+
 	$(function(){
+		handlePlusOneSelection();
 		mobileMenuOutsideClick();
 		parallax();
 		offcanvasMenu();
@@ -227,6 +249,7 @@
 		counter();
 		counterWayPoint();
 	});
+
 
 
 }());
