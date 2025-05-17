@@ -4,6 +4,14 @@ $(document).ready(function() {
   // Grab the current date
   let currentDate = new Date();
 
+  FlipClock.Lang.Swedish = {
+    days: 'Dagar',
+    hours: 'Timmar',
+    minutes: 'Minuter',
+    seconds: 'Sekunder'
+  };
+  FlipClock.Lang['sv'] = FlipClock.Lang.Swedish;
+
   // Target future date/24 hour time/Timezone
   let targetDate = moment.tz("2026-06-06 14:00", "Europe/Stockholm");
 
