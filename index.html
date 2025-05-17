@@ -229,7 +229,15 @@
 								<input type="email" id="email" name="email" class="form-control" placeholder="Din e-postadress" required>
 							</div>
 							<div class="form-group">
-								<label for="attendance" class="control-label">Tar du med +1?</label>
+								<label for="transport" class="control-label">Biltransport</label>
+								<select id="transport" name="transport" class="form-control" required>
+									<option value="">Välj ett alternativ</option>
+									<option value="yes">Ja, jag vill ha biltransport</option>
+									<option value="no">Nej, jag behöver inte biltransport</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="attendance" class="control-label">+1</label>
 								<select id="attendance" name="attendance" class="form-control" required>
 									<option value="">Välj ett alternativ</option>
 									<option value="yes">Ja, jag vill ha +1</option>
