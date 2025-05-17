@@ -2,177 +2,23 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <title>Matilda & Pussads Retro Arcade Bröllop 👾</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            background: #000;
-            color: #39ff14;
-            font-family: 'Press Start 2P', cursive;
-            overflow: hidden;
-        }
-
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            image-rendering: pixelated;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.8);
-            border: 4px solid #ff0080;
-            box-shadow: 0 0 20px #ff0080;
-            padding: 20px;
-            max-width: 300px;
-            z-index: 2;
-            animation: glowPulse 1.5s infinite alternate;
-            text-align: center;
-        }
-
-        .overlay h1 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #ff00ff;
-        }
-
-        .overlay p {
-            font-size: 10px;
-            margin: 5px 0;
-        }
-
-        .scanlines {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: repeating-linear-gradient(
-                    to bottom,
-                    rgba(0, 0, 0, 0.2),
-                    rgba(0, 0, 0, 0.2) 2px,
-                    transparent 2px,
-                    transparent 4px
-            );
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        @keyframes glowPulse {
-            0% { box-shadow: 0 0 20px #ff0080; }
-            50% { box-shadow: 0 0 40px #ff00ff; }
-            100% { box-shadow: 0 0 20px #ff0080; }
-        }
-    </style>
+    <title>Jonas och Matildas bröllop</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<canvas id="gameCanvas"></canvas>
-
-<div class="overlay">
-    <h1>✨ Matilda & Pussads Bröllop ✨</h1>
-    <p>🗓️ Datum: 6 juni 2025</p>
-    <p>📍 Plats: Hembygdsgården</p>
-    <p>🎩 Klädsel: Kavaj</p>
-    <p>🎶 Vigsel 15:00, Middag & Fest 17:00</p>
-    <p>👾 Klicka & Skjut fiender!</p>
-</div>
-
-<div class="scanlines"></div>
-
-<script>
-    const canvas = document.getElementById('gameCanvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let player = { x: canvas.width / 2, y: canvas.height - 50, size: 20 };
-    let bullets = [];
-    let enemies = [];
-    let startTime = Date.now();
-
-    function createEnemies() {
-        enemies = [];
-        for (let i = 0; i < 8; i++) {
-            for (let j = 0; j < 3; j++) {
-                enemies.push({ x: 60 + i * 80, y: 60 + j * 60, size: 30, offsetX: 0 });
-            }
-        }
-    }
-
-    function drawPlayer() {
-        ctx.fillStyle = '#39ff14';
-        ctx.fillRect(player.x - player.size / 2, player.y - player.size / 2, player.size, player.size);
-    }
-
-    function drawBullets() {
-        ctx.fillStyle = '#ff00ff';
-        bullets.forEach(b => {
-            ctx.fillRect(b.x - 2, b.y - 10, 4, 10);
-        });
-    }
-
-    function drawEnemies() {
-        ctx.fillStyle = '#ff0080';
-        const time = (Date.now() - startTime) / 500;
-
-        enemies.forEach(e => {
-            let offsetX = Math.sin(time + e.y / 50) * 20;
-            e.offsetX = offsetX;
-            ctx.fillRect(e.x + offsetX - e.size / 2, e.y - e.size / 2, e.size, e.size);
-        });
-    }
-
-    function updateBullets() {
-        bullets = bullets.filter(b => b.y > 0);
-        bullets.forEach(b => b.y -= 8);
-
-        bullets.forEach(b => {
-            enemies.forEach((e, index) => {
-                let enemyX = e.x + e.offsetX;
-                if (b.x > enemyX - e.size / 2 && b.x < enemyX + e.size / 2 &&
-                    b.y > e.y - e.size / 2 && b.y < e.y + e.size / 2) {
-                    enemies.splice(index, 1);
-                    b.y = -10;
-                }
-            });
-        });
-    }
-
-    function gameLoop() {
-        ctx.fillStyle = '#000';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        drawPlayer();
-        drawBullets();
-        drawEnemies();
-        updateBullets();
-
-        requestAnimationFrame(gameLoop);
-    }
-
-    window.addEventListener('mousemove', e => {
-        player.x = e.clientX;
-    });
-
-    window.addEventListener('click', () => {
-        bullets.push({ x: player.x, y: player.y });
-    });
-
-    createEnemies();
-    gameLoop();
-
-    window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    });
-</script>
-
+<nav>
+    <ul>
+        <li><a href="brollopet.html">Bröllopet</a></li>
+        <li><a href="osa.html">OSA</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+</nav>
+<main>
+    <h2><i>Välkommen till</i></h2>
+    <h1>Jonas och Matildas bröllop</h1>
+    <img src="89406cd9-d2a5-4983-befd-80aa0e5affb9.JPG" alt="Jonas och Matilda" class="main-image">
+</main>
+<img src="vinranka.png" class="decor-top" alt="">
+<img src="vinranka.png" class="decor-bottom" alt="">
 </body>
 </html>
