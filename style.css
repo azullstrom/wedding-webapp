@@ -2,35 +2,25 @@ body {
     font-family: 'Georgia', serif;
     background-color: white;
 }
+
 .main-image {
     max-width: 400px;
     border-radius: 10px;
-    margin-top: 20px;
 }
+
 .decor {
-    max-width: 150px;
-    opacity: 0.15;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2; /* Put it ON TOP */
+    opacity: 0.4; /* Optional for transparency */
+    pointer-events: none; /* So clicks go through */
 }
+
 .nav-link {
     font-weight: bold;
     color: #333 !important;
-}
-
-.photo-frame {
-    position: relative;
-    display: inline-block;
-    background: url('resources/flowers.png') center center no-repeat;
-    background-size: cover;
-    padding: 30px; /* Controls the size of the frame border */
-}
-.photo-frame img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
 }
