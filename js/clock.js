@@ -4,14 +4,6 @@ $(document).ready(function() {
   // Grab the current date
   let currentDate = new Date();
 
-  FlipClock.Lang.Swedish = {
-    days: 'Dagar',
-    hours: 'Timmar',
-    minutes: 'Minuter',
-    seconds: 'Sekunder'
-  };
-  FlipClock.Lang['sv'] = FlipClock.Lang.Swedish;
-
   // Target future date/24 hour time/Timezone
   let targetDate = moment.tz("2026-06-06 14:00", "Europe/Stockholm");
 
@@ -38,6 +30,17 @@ $(document).ready(function() {
         }
       }
     });
+
+    // Translate labels to Swedish
+    setTimeout(function() {
+      $('.flip-clock-label').each(function() {
+        const text = $(this).text().trim();
+        if (text === "Days") $(this).text("Dagar");
+        if (text === "Hours") $(this).text("Timmar");
+        if (text === "Minutes") $(this).text("Minuter");
+        if (text === "Seconds") $(this).text("Sekunder");
+      });
+    }, 100);
     
     // Check when timer reaches 0, then stop at 0
     setTimeout(function() {
