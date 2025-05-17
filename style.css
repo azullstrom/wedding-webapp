@@ -20,3 +20,17 @@ body {
     font-weight: bold;
     color: #333 !important;
 }
+
+.photo-frame {
+    position: relative;
+    display: inline-block;
+    background: url('resources/flowers.png') center center no-repeat;
+    background-size: cover;
+    padding: 30px; /* Controls the size of the frame border */
+}
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
