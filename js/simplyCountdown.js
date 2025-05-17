@@ -122,13 +122,12 @@
                 minutes: 0,
                 seconds: 0,
                 words: {
-                    days: 'day',
-                    hours: 'hour',
-                    minutes: 'minute',
-                    seconds: 'second',
-                    pluralLetter: 's'
+                    days: 'dagar',
+                    hours: 'timmar',
+                    minutes: 'minuter',
+                    seconds: 'sekunder',
                 },
-                plural: true,
+                plural: false,
                 inline: false,
                 enableUtc: true,
                 onEnd: function () {
