@@ -1806,55 +1806,6 @@ form label {
   opacity: 0;
 }
 
-#heart-emitter {
-  position: relative;
-  display: inline-block;
-}
-
-.heart {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  animation: grow-fade 6s ease-out forwards;
-  opacity: 0.8;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg) scale(0.6);
-  transform-origin: center center;
-}
-
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  border-radius: 50%;
-}
-
-.heart::before {
-  top: -10px;
-  left: 0;
-}
-
-.heart::after {
-  left: -10px;
-  top: 0;
-}
-
-@keyframes grow-fade {
-  0% {
-    transform: translate(-50%, -50%) rotate(45deg) scale(0.6);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(45deg) scale(2.5);
-    opacity: 0;
-  }
-}
-
 
 /*# sourceMappingURL=style.css.map */
 

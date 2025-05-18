@@ -83,7 +83,6 @@
 	</nav>
 
 	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/bg.jpg);" data-stellar-background-ratio="0.5">
-		<div id="heart-emitter"></div>
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -361,26 +360,5 @@
 			toggleFields();
 		});
 	</script>
-	<script>
-		const emitter = document.getElementById('heart-emitter');
-
-		function emitHeart() {
-			const heart = document.createElement('div');
-			heart.className = 'heart';
-
-			heart.style.left = '50%';
-			heart.style.top = '50%';
-
-			emitter.appendChild(heart);
-
-			setTimeout(() => {
-				heart.remove();
-			}, 6000);
-		}
-
-		setInterval(emitHeart, 2000); // Emit heart every 6 seconds
-	</script>
-
-
 	</body>
 </html>
