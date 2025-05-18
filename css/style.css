@@ -1816,12 +1816,12 @@ form label {
   width: 20px;
   height: 20px;
   background-color: red;
-  animation: grow-fade 2s ease-out forwards;
+  animation: grow-fade 6s ease-out forwards;
   opacity: 0.8;
   top: 50%;
   left: 50%;
-  transform-origin: center center;
   transform: translate(-50%, -50%) rotate(45deg) scale(0.6);
+  transform-origin: center center;
 }
 
 .heart::before,
@@ -1830,7 +1830,7 @@ form label {
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: red;
+  background-color: #e8e8e8;
   border-radius: 50%;
 }
 

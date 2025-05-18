@@ -369,21 +369,17 @@
 			const heart = document.createElement('div');
 			heart.className = 'heart';
 
-			// Random offset
-			const offsetX = (Math.random() - 0.5) * 100;
-			const offsetY = (Math.random() - 0.5) * 30;
-
-			heart.style.left = `calc(50% + ${offsetX}px)`;
-			heart.style.top = `calc(50% + ${offsetY}px)`;
+			heart.style.left = '50%';
+			heart.style.top = '50%';
 
 			emitter.appendChild(heart);
 
 			setTimeout(() => {
 				heart.remove();
-			}, 2000);
+			}, 6000);
 		}
 
-		setInterval(emitHeart, 2000); // Emit heart every 2 seconds
+		setInterval(emitHeart, 6000); // Emit heart every 6 seconds
 	</script>
 
 
