@@ -204,6 +204,10 @@
 		<div class="container">
 
 			<div class="row">
+				<div id="heart-emitter" class="text-center"></div>
+			</div>
+
+			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<h2>Boende</h2>
 				</div>
@@ -360,5 +364,26 @@
 			toggleFields();
 		});
 	</script>
+	<script>
+		const emitter = document.getElementById('heart-emitter');
+
+		function emitHeart() {
+			const heart = document.createElement('div');
+			heart.className = 'heart';
+
+			heart.style.left = '50%';
+			heart.style.top = '50%';
+
+			emitter.appendChild(heart);
+
+			setTimeout(() => {
+				heart.remove();
+			}, 6000);
+		}
+
+		setInterval(emitHeart, 2000); // Emit heart every 6 seconds
+	</script>
+
+
 	</body>
 </html>
