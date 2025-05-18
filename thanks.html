@@ -59,5 +59,13 @@
 <script src="js/jquery.stellar.min.js"></script>
 <!-- Main -->
 <script src="js/main.js"></script>
+
+<!-- Ensure loader fades out once page fully loaded -->
+<script>
+	$(window).on('load', function() {
+		$('.fh5co-loader').fadeOut('slow');
+	});
+</script>
+
 </body>
 </html>
