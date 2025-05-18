@@ -91,7 +91,9 @@
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>Jonas &amp; Matilda</h1>
 							<br>
-							<img src="images/fprint.png" alt="Matilda + Jonas" width="256" height="256"> 
+							<div id="heart-emitter">
+								<img src="images/fprint.png" alt="Matilda + Jonas" width="256" height="256">
+							</div>
 							<h2>6/6-2026</h2>
 							<div class="flipTimebox">
 								<div class="clock clock-fix"></div>
@@ -360,6 +362,30 @@
 			toggleFields();
 		});
 	</script>
+	<script>
+		const emitter = document.getElementById('heart-emitter');
+
+		function emitHeart() {
+			const heart = document.createElement('div');
+			heart.className = 'heart';
+
+			// Random offset
+			const offsetX = (Math.random() - 0.5) * 100;
+			const offsetY = (Math.random() - 0.5) * 30;
+
+			heart.style.left = `calc(50% + ${offsetX}px)`;
+			heart.style.top = `calc(50% + ${offsetY}px)`;
+
+			emitter.appendChild(heart);
+
+			setTimeout(() => {
+				heart.remove();
+			}, 2000);
+		}
+
+		setInterval(emitHeart, 2000); // Emit heart every 2 seconds
+	</script>
+
 
 	</body>
 </html>
