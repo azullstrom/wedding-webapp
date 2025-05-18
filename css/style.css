@@ -420,6 +420,7 @@ h1, h2, h3, h4, h5, h6, figure {
     margin-bottom: 10px;
   }
 }
+#fh5co-osa .event-wrap h3,
 #fh5co-counter .event-wrap h3,
 #fh5co-location .event-wrap h3 {
   font-size: 14px;
@@ -432,6 +433,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-family: Sofia Sans Condensed;
   font-size: 25px;
 }
+#fh5co-osa .event-wrap p,
 #fh5co-counter .event-wrap p, #fh5co-counter .event-wrap span,
 #fh5co-location .event-wrap p,
 #fh5co-location .event-wrap span {
