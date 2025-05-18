@@ -242,7 +242,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
 						
-						<form id="osaForm" class="form-horizontal fh5co-form">
+						<form action="https://formsubmit.co/azullstrom@gmail.com" method="POST" class="form-horizontal fh5co-form">
 							<input type="hidden" name="_subject" value="Ny OSA-anmälan från hemsidan!">
 							<input type="hidden" name="_captcha" value="false">
 							<input type="hidden" name="_template" value="table">
@@ -310,40 +310,6 @@
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
-	<script>
-		document.querySelector("#osaForm").addEventListener("submit", function (e) {
-			e.preventDefault();
-			
-			const form = e.target;
-
-			const data = {
-				guest1: form.guest1.value,
-				guest2: form.guest2.value,
-				email: form.email.value,
-				transport: form.transport.value,
-				message: form.message.value
-			};
-
-			fetch("https://script.google.com/macros/s/AKfycbyAB_g1URjn7YXE3Vjj3hy58v3OHDV9cW8yc7hWbcF8DIOOXi--NgOnVIAGzIloECQ/exec", {
-				method: "POST",
-				body: JSON.stringify(data),
-				headers: {
-					"Content-Type": "application/json"
-				}
-			}).then(response => {
-				if (response.ok) {
-					alert("Tack för din OSA!");
-					form.reset(); 
-				} else {
-					alert("Något gick fel. Försök igen senare.");
-				}
-			}).catch(err => {
-				console.error("Submit error:", err);
-				alert("Tekniskt fel – försök igen senare.");
-			});
-		});
-	</script>
-
 
 	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
 	<script src="js/simplyCountdown.js"></script>
