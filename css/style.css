@@ -1807,6 +1807,7 @@ form label {
 #heart-emitter {
   position: relative;
   display: inline-block;
+  perspective: 800px;
 }
 
 .heart {
@@ -1845,7 +1846,7 @@ form label {
     opacity: 1;
   }
   100% {
-    transform: scale(2.5) translateY(-60px) rotate(45deg);
+    transform: scale(2.5) translateY(-150px) rotate(45deg);
     opacity: 0;
   }
 }
