@@ -1832,7 +1832,7 @@ form label {
 }
 
 @keyframes slideInRight {
-  from { right: -300px; opacity: 0; }
+  from { right: -500px; opacity: 0; }
   to { right: 30px; opacity: 1; }
 }
 
