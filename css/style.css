@@ -1806,37 +1806,6 @@ form label {
   opacity: 0;
 }
 
-#donation-guy {
-  position: fixed;
-  bottom: 30px;
-  right: -300px;
-  z-index: 999;
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  animation: slideInRight 3s ease-in-out 2s forwards;
-}
-
-.donation-guy-img {
-  height: 100px;
-}
-
-.donation-bubble {
-  background: #fff5d1;
-  border: 2px solid #ffc107;
-  padding: 10px 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  font-size: 16px;
-  max-width: 220px;
-}
-
-@keyframes slideInRight {
-  from { right: -300px; opacity: 0; }
-  to { right: 30px; opacity: 1; }
-}
-
-
 
 
 
