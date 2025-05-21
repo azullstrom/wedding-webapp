@@ -1831,9 +1831,9 @@ form label {
   max-width: 220px;
 }
 
-@keyframes slideInLeft {
-  from { left: -300px; opacity: 0; }
-  to { left: 30px; opacity: 1; }
+@keyframes slideInRight {
+  from { right: -300px; opacity: 0; }
+  to { right: 30px; opacity: 1; }
 }
 
 
