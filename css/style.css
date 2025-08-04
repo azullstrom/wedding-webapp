@@ -21,8 +21,6 @@ body {
 }
 
 #page {
-  display: flex;
-  flex-direction: column;
   position: relative;
   overflow-x: hidden;
   width: 100%;
@@ -47,6 +45,10 @@ body {
   z-index: 101;
   background: rgba(0, 0, 0, 0.7);
   content: "";
+}
+
+.br-divider {
+  display: block; 
 }
 
 a {
@@ -99,6 +101,9 @@ h1, h2, h3, h4, h5, h6, figure {
 @media screen and (max-width: 768px) {
   .fh5co-nav {
     padding: 20px 0;
+  }
+  .br-divider {
+    display: none; 
   }
 }
 .fh5co-nav #fh5co-logo {
@@ -360,6 +365,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-counter,
 #fh5co-location {
   height: 850px;
+  float: left;
 }
 #fh5co-counter .display-t,
 #fh5co-counter .display-tc,
@@ -963,7 +969,6 @@ form label {
 #fh5co-couple,
 #fh5co-gallery,
 .fh5co-section {
-  flex-shrink: 0;
   padding: 7em 0;
   clear: both;
 }
