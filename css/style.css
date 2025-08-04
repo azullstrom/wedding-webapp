@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .section-spacing {
-  margin-top: 1000px; 
+  padding-top: 1000px; 
 }
 
 .fh5co-nav {
@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6, figure {
     padding: 20px 0;
   }
   .section-spacing {
-    margin-top: 0px; 
+    padding-top: 0px; 
   }
 }
 .fh5co-nav #fh5co-logo {
