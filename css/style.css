@@ -21,6 +21,8 @@ body {
 }
 
 #page {
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow-x: hidden;
   width: 100%;
@@ -961,6 +963,7 @@ form label {
 #fh5co-couple,
 #fh5co-gallery,
 .fh5co-section {
+  flex-shrink: 0;
   padding: 7em 0;
   clear: both;
 }
