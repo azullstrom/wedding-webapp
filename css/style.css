@@ -85,6 +85,14 @@ h1, h2, h3, h4, h5, h6, figure {
   background: #646464;
 }
 
+#fh5co-location {
+  margin-bottom: 80px;
+}
+
+#fh5co-gallery {
+  margin-top: 40px;
+}
+
 .fh5co-nav {
   position: absolute;
   top: 0;
