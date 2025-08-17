@@ -1846,9 +1846,9 @@ form label {
 
 .hero-title {
   font-family: "Qwitcher Grypen", cursive !important;
-  font-size: 200px;
+  font-size: 200px !important;
   line-height: 1.5;
-  font-weight: bold;
+  font-weight: 700 !important;
 }
 
 
