@@ -860,7 +860,7 @@ form label {
 .fh5co-cover .display-tc h1 {
   margin-bottom: 0px;
   font-family: "Qwitcher Grypen", cursive;
-  font-size: 150px;
+  font-size: 140px;
   line-height: 1.5;
   font-weight: 700;
 }
@@ -868,14 +868,14 @@ form label {
   #fh5co-header .display-tc h1,
   #fh5co-counter .display-tc h1,
   .fh5co-cover .display-tc h1 {
-    font-size: 110px;
+    font-size: 100px;
   }
 }
 @media screen and (max-width: 480px) {
   #fh5co-header .display-tc h1,
   #fh5co-counter .display-tc h1,
   .fh5co-cover .display-tc h1 {
-    font-size: 80px;
+    font-size: 70px;
   }
 }
 #fh5co-header .display-tc h2,
