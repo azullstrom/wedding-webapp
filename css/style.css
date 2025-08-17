@@ -1845,9 +1845,10 @@ form label {
 }
 
 .hero-title {
-  font-family: "Edu NSW ACT Cursive", cursive !important;
+  font-family: "Qwitcher Grypen", cursive !important;
   font-size: 65px;
   line-height: 1.5;
+  font-weight: bold;
 }
 
 
